@@ -1,0 +1,1629 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="i-GIS Geosystems LTD — engineering and cadastral surveys, GIS, remote sensing, urban planning and environmental assessments in East Africa.">
+<title>i-GIS Geosystems LTD | Spatial Intelligence for a Better Future</title>
+
+<style>
+:root {
+  --primary: #103f67;
+  --secondary: #0d7774;
+  --background: #f4f7f8;
+  --ink: #132b3c;
+  --muted: #617482;
+  --accent: #d6a85b;
+  --white: #ffffff;
+  --line: #dce6e9;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--background);
+}
+
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; }
+
+.container {
+  width: min(1160px, calc(100% - 44px));
+  margin: auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--secondary);
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.eyebrow:before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.section { padding: 88px 0; }
+
+.section-head {
+  max-width: 690px;
+  margin-bottom: 42px;
+}
+
+.section-head h2 {
+  margin: 14px 0;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1.08;
+  letter-spacing: -.045em;
+  color: var(--primary);
+}
+
+.section-head p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* TOP BAR */
+
+.topbar {
+  background: #0b2c47;
+  color: #d8e6ee;
+  font-size: .78rem;
+}
+
+.topbar-inner {
+  min-height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar a { color: white; }
+
+.topbar-right {
+  display: flex;
+  gap: 22px;
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+
+.nav {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: linear-gradient(145deg,var(--primary),var(--secondary));
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.brand-name {
+  color: var(--primary);
+  font-weight: 900;
+  font-size: 1.15rem;
+}
+
+.brand-name span {
+  display: block;
+  color: var(--muted);
+  font-size: .57rem;
+  letter-spacing: .19em;
+  margin-top: 6px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: .87rem;
+  font-weight: 650;
+}
+
+.nav-links a:hover { color: var(--secondary); }
+
+.nav-cta, .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 0;
+  border-radius: 8px;
+  padding: 14px 20px;
+  background: var(--secondary);
+  color: white;
+  font-weight: 800;
+  font-size: .88rem;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.nav-cta:hover, .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px #0d777433;
+  background: #096662;
+}
+
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: white;
+  border-radius: 8px;
+  padding: 9px 11px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background: linear-gradient(112deg,#0a2e4c,#104d70 57%,#0b716e);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.12fr .88fr;
+  align-items: center;
+  gap: 50px;
+  padding: 92px 0 100px;
+}
+
+.hero .eyebrow { color: #b8e4dd; }
+
+.hero h1 {
+  margin: 20px 0;
+  max-width: 700px;
+  font-size: clamp(2.8rem,5.7vw,5.15rem);
+  line-height: .99;
+  letter-spacing: -.065em;
+}
+
+.hero h1 em {
+  color: #e9c27d;
+  font-style: normal;
+}
+
+.hero-copy {
+  max-width: 610px;
+  color: #d6e5ed;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+.btn-gold {
+  background: var(--accent);
+  color: #1d3444;
+}
+
+.btn-gold:hover { background: #e7bb70; }
+
+.btn-outline {
+  color: white;
+  background: transparent;
+  border: 1px solid #ffffff80;
+}
+
+.btn-outline:hover {
+  background: #ffffff16;
+  box-shadow: none;
+}
+
+.hero-note {
+  margin-top: 35px;
+  color: #c7d9e2;
+  font-size: .8rem;
+}
+
+.hero-note strong { color: white; }
+
+.hero-visual {
+  min-height: 400px;
+  display: grid;
+  place-items: center;
+}
+
+.globe-card {
+  width: min(100%,430px);
+  aspect-ratio: 1/.92;
+  position: relative;
+  border: 1px solid #ffffff38;
+  border-radius: 28px;
+  background: linear-gradient(145deg,#ffffff18,#ffffff06);
+  overflow: hidden;
+  box-shadow: 0 30px 80px #001b2e55;
+}
+
+.globe-card:before {
+  content: "";
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%,-50%);
+  background: radial-gradient(circle at 35% 30%,#c9e4d7,#4f9b91 38%,#174d6b 72%);
+  box-shadow: inset -20px -15px 45px #062b4a99,0 0 55px #8bd6c344;
+}
+
+.globe-card:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .35;
+  background-image:
+    linear-gradient(#d9f3ed33 1px,transparent 1px),
+    linear-gradient(90deg,#d9f3ed33 1px,transparent 1px);
+  background-size: 34px 34px;
+}
+
+.globe-svg {
+  position: absolute;
+  z-index: 1;
+  width: 86%;
+  height: 86%;
+  inset: 7%;
+}
+
+.visual-label {
+  position: absolute;
+  z-index: 2;
+  background: #092e49dd;
+  border: 1px solid #ffffff40;
+  border-radius: 12px;
+  padding: 12px 15px;
+}
+
+.visual-label b { display: block; font-size: .86rem; }
+.visual-label small { color: #b9d1dc; font-size: .7rem; }
+.label-one { left: -20px; top: 65px; }
+.label-two { right: -18px; bottom: 66px; }
+
+/* TRUST STRIP */
+
+.trust-strip {
+  background: white;
+  border-bottom: 1px solid var(--line);
+}
+
+.trust-inner {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+  padding: 25px 0;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: .83rem;
+  font-weight: 700;
+}
+
+.trust-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #e5f1ef;
+  color: var(--secondary);
+  font-size: 1.1rem;
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.about-visual {
+  min-height: 440px;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(145deg,#dcebe8,#b5d0cc 55%,#8ab6b0);
+}
+
+.about-visual svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.about-stamp {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  background: var(--primary);
+  color: white;
+  border-radius: 15px;
+  padding: 19px 22px;
+  max-width: 205px;
+}
+
+.about-stamp strong {
+  display: block;
+  font-size: 1.55rem;
+}
+
+.about-stamp span {
+  font-size: .75rem;
+  color: #c9dbe5;
+  line-height: 1.5;
+}
+
+.about-content h2 {
+  color: var(--primary);
+  font-size: clamp(2rem,4vw,3.2rem);
+  line-height: 1.08;
+  margin: 15px 0 20px;
+}
+
+.about-content p {
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+.value-list {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.value {
+  border-top: 2px solid var(--secondary);
+  padding-top: 13px;
+}
+
+.value b {
+  display: block;
+  color: var(--primary);
+}
+
+.value span {
+  color: var(--muted);
+  font-size: .75rem;
+  line-height: 1.5;
+}
+
+/* SERVICES */
+
+.services-section { background: #edf3f5; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 17px;
+}
+
+.service-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 27px 22px;
+  min-height: 280px;
+  transition: .25s;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  border-color: #8bbcb5;
+  box-shadow: 0 18px 40px #12384c12;
+}
+
+.service-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: var(--secondary);
+  background: #e6f1ef;
+  font-size: 1.55rem;
+  margin-bottom: 22px;
+}
+
+.service-card h3 {
+  margin: 0 0 12px;
+  color: var(--primary);
+  font-size: 1.08rem;
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .86rem;
+  line-height: 1.75;
+}
+
+.service-more {
+  margin-top: 18px;
+  color: var(--secondary);
+  font-weight: 800;
+  font-size: .79rem;
+}
+
+/* PROCESS */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 25px;
+  counter-reset: step;
+}
+
+.process-item {
+  position: relative;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  counter-increment: step;
+}
+
+.process-item:before {
+  content: "0" counter(step);
+  position: absolute;
+  top: -16px;
+  left: 0;
+  padding-right: 12px;
+  background: var(--background);
+  color: var(--secondary);
+  font-weight: 900;
+}
+
+.process-item h3 { color: var(--primary); font-size: 1rem; }
+.process-item p { color: var(--muted); font-size: .84rem; line-height: 1.7; }
+
+/* PROJECTS */
+
+.projects-section {
+  background: #0b2e49;
+  color: white;
+}
+
+.projects-section .section-head h2 { color: white; }
+.projects-section .section-head p { color: #c0d2dc; }
+.projects-section .eyebrow { color: #a9d8d0; }
+
+.project-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 25px;
+}
+
+.filter-btn {
+  border: 1px solid #ffffff40;
+  background: transparent;
+  color: #d5e4eb;
+  padding: 9px 14px;
+  border-radius: 99px;
+  font-size: .77rem;
+  cursor: pointer;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--accent);
+  color: #142f42;
+  border-color: var(--accent);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 17px;
+}
+
+.project-card {
+  border: 1px solid #ffffff24;
+  background: #ffffff0b;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform .2s;
+}
+
+.project-card:hover { transform: translateY(-5px); }
+
+.project-art {
+  height: 145px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg,#1c6075,#0d344f);
+  display: grid;
+  place-items: center;
+}
+
+.project-art svg {
+  width: 100px;
+  height: 100px;
+  color: #d6c18d;
+}
+
+.project-body { padding: 20px 21px 22px; }
+
+.project-tag {
+  color: #9dd7cb;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.project-body h3 {
+  margin: 9px 0;
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+
+.project-body p {
+  color: #c0d1db;
+  font-size: .81rem;
+  line-height: 1.7;
+}
+
+.project-card[hidden] { display: none; }
+
+/* PARTNERS */
+
+.partners {
+  padding: 34px 0;
+  background: #f0f5f5;
+  color: #385366;
+}
+
+.partners-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.partners-label {
+  font-size: .7rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #758b95;
+}
+
+.partner-name {
+  font-weight: 900;
+  font-size: 1.08rem;
+  opacity: .78;
+}
+
+/* WHY CHOOSE US */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.why-list { display: grid; gap: 22px; }
+
+.why-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+}
+
+.why-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  background: #e4f0ee;
+  color: var(--secondary);
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+}
+
+.why-item h3 {
+  margin: 1px 0 6px;
+  color: var(--primary);
+}
+
+.why-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: .85rem;
+}
+
+.quote-panel {
+  background: linear-gradient(145deg,#e5efed,#f3f7f6);
+  border-radius: 22px;
+  padding: 34px;
+}
+
+.quote-panel h3 {
+  color: var(--primary);
+  font-size: 1.65rem;
+  line-height: 1.15;
+}
+
+.quote-panel p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: .9rem;
+}
+
+/* CONTACT */
+
+.contact-section { background: #edf3f5; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 45px;
+}
+
+.contact-info h2 {
+  color: var(--primary);
+  font-size: clamp(2rem,4vw,3rem);
+  line-height: 1.08;
+}
+
+.contact-info > p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.contact-detail {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+  align-items: flex-start;
+}
+
+.contact-detail .service-icon {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.contact-detail b {
+  display: block;
+  color: var(--primary);
+  font-size: .88rem;
+  margin: 2px 0 5px;
+}
+
+.contact-detail span,
+.contact-detail a {
+  color: var(--muted);
+  font-size: .83rem;
+  line-height: 1.65;
+}
+
+.contact-form {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 15px 45px #15394a0b;
+}
+
+.contact-form h3 {
+  margin: 0 0 7px;
+  color: var(--primary);
+  font-size: 1.35rem;
+}
+
+.contact-form > p {
+  color: var(--muted);
+  font-size: .84rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field { margin-bottom: 15px; }
+
+.field label {
+  display: block;
+  font-size: .76rem;
+  font-weight: 800;
+  margin-bottom: 7px;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--background);
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 12px 13px;
+  outline: none;
+  font-size: .85rem;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px #0d777418;
+}
+
+.field textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: .72rem;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #08263e;
+  color: #d4e2e9;
+  padding: 55px 0 22px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr .8fr .9fr;
+  gap: 45px;
+  padding-bottom: 40px;
+}
+
+.footer-brand .brand-name { color: white; }
+.footer-brand .brand-name span { color: #9db6c3; }
+
+.footer-brand p {
+  max-width: 360px;
+  color: #a9c0cb;
+  line-height: 1.8;
+  font-size: .84rem;
+}
+
+.footer-col h4 { color: white; }
+
+.footer-col a,
+.footer-col p {
+  display: block;
+  color: #a9c0cb;
+  font-size: .82rem;
+  line-height: 1.8;
+  margin: 8px 0;
+}
+
+.footer-col a:hover { color: #e9c27d; }
+
+.footer-bottom {
+  border-top: 1px solid #ffffff20;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #8fa9b7;
+  font-size: .73rem;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:980px) {
+  .nav-links { gap: 15px; }
+  .nav-links a { font-size: .8rem; }
+  .services-grid { grid-template-columns: repeat(2,1fr); }
+  .hero-grid { gap: 25px; }
+  .about-grid { gap: 40px; }
+  .projects-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+@media(max-width:760px) {
+  .container { width: min(100% - 32px,560px); }
+  .topbar-inner { justify-content: center; }
+  .topbar-right { display: none; }
+  .nav { height: 70px; }
+  .menu-toggle { display: block; }
+  .nav-cta { display: none; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 22px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    box-shadow: 0 15px 25px #0c2e4214;
+  }
+
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 12px 0; font-size: .92rem; }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding: 66px 0 72px;
+  }
+
+  .hero h1 { font-size: clamp(2.65rem,12vw,4.2rem); }
+  .hero-visual { min-height: 330px; margin: 10px; }
+  .globe-card { max-width: 350px; }
+
+  .section { padding: 65px 0; }
+
+  .about-grid,
+  .why-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .about-visual { min-height: 340px; }
+  .trust-inner { grid-template-columns: repeat(2,1fr); }
+  .process-grid { grid-template-columns: repeat(2,1fr); }
+  .projects-grid { grid-template-columns: 1fr; }
+  .partners-inner { justify-content: center; }
+  .partners-label { width: 100%; text-align: center; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .footer-brand { grid-column: 1/-1; }
+  .footer-bottom { flex-direction: column; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+}
+
+@media(max-width:390px) {
+  .brand-name { font-size: 1rem; }
+  .trust-inner { gap: 13px; }
+  .trust-item { font-size: .74rem; }
+  .services-grid,
+  .value-list,
+  .footer-grid { grid-template-columns: 1fr; }
+  .service-card { min-height: 0; }
+  .footer-brand { grid-column: auto; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>Geomatics · Engineering · Spatial Intelligence</span>
+    <div class="topbar-right">
+      <a href="tel:+254726355469">+254 726 355469</a>
+      <a href="mailto:igis.geosystem@gmail.com">igis.geosystem@gmail.com</a>
+      <span>Mon–Fri · 8:00 AM–5:00 PM EAT</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<header>
+  <div class="container nav">
+
+    <a class="brand" href="#home">
+      <div class="brand-mark">⌖</div>
+      <div class="brand-name">
+        i-GIS GEOSYSTEMS
+        <span>SPATIAL INTELLIGENCE</span>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Our Projects</a>
+      <a href="#why-us">Why i-GIS</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="nav-cta" href="#contact">Request a Consultation ↗</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+  </div>
+</header>
+
+<main>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div>
+      <span class="eyebrow">Mapping insight. Engineering progress.</span>
+
+      <h1>Shaping the future with <em>geospatial precision.</em></h1>
+
+      <p class="hero-copy">
+        We turn complex land, infrastructure and environmental information
+        into clear, reliable intelligence. Discover integrated surveying,
+        GIS, remote sensing, urban planning and environmental solutions
+        built for sustainable development.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#contact">Request a Quote ↗</a>
+        <a class="btn btn-outline" href="#services">Explore Our Services ↓</a>
+      </div>
+
+      <div class="hero-note">
+        ✦ <strong>Precision-led solutions</strong> for Kenya, East Africa and the Horn of Africa
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="globe-card">
+
+        <svg class="globe-svg" viewBox="0 0 400 380" fill="none">
+          <g stroke="#d7eee7" stroke-width="1.2" opacity=".65">
+            <ellipse cx="200" cy="190" rx="145" ry="58"/>
+            <ellipse cx="200" cy="190" rx="145" ry="108"/>
+            <ellipse cx="200" cy="190" rx="75" ry="145"/>
+            <path d="M55 190h290M200 45v290"/>
+          </g>
+          <path d="m125 104 31-20 27 8 20 25-8 23 19 19-8 25-27 7-9 31-27 5-17-21-22-10 7-30-16-19 7-43Z"
+                fill="#d7d7a9"/>
+          <path d="m224 213 28-15 35 9 18 24-13 24-21 5-12 31-24-7-9-27-21-13 19-31Z"
+                fill="#d7d7a9"/>
+          <path d="M88 236 143 193l38 20 45-65 57 27 39-42"
+                stroke="#f0c77d" stroke-width="2.5" stroke-dasharray="5 6"/>
+          <g fill="#f0c77d">
+            <circle cx="88" cy="236" r="5"/>
+            <circle cx="143" cy="193" r="5"/>
+            <circle cx="226" cy="148" r="5"/>
+            <circle cx="283" cy="175" r="5"/>
+            <circle cx="322" cy="133" r="5"/>
+          </g>
+        </svg>
+
+        <div class="visual-label label-one">
+          <b>Spatial intelligence</b>
+          <small>Data with direction</small>
+        </div>
+
+        <div class="visual-label label-two">
+          <b>Built for impact</b>
+          <small>People · Places · Planet</small>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="container trust-inner">
+    <div class="trust-item"><span class="trust-icon">⌖</span>High-precision surveying</div>
+    <div class="trust-item"><span class="trust-icon">▧</span>Advanced GIS & mapping</div>
+    <div class="trust-item"><span class="trust-icon">♧</span>Environmental stewardship</div>
+    <div class="trust-item"><span class="trust-icon">⌂</span>Sustainable development</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-grid">
+
+    <div class="about-visual">
+      <svg viewBox="0 0 500 440" fill="none">
+        <g stroke="#ffffff" stroke-width="1.2" opacity=".65">
+          <path d="M0 75 130 20l105 40 110-35 155 65"/>
+          <path d="M0 150l125-55 120 42 105-52 150 60"/>
+          <path d="M0 240l130-55 115 40 105-55 150 55"/>
+          <path d="M0 330l130-55 115 45 105-55 150 60"/>
+          <path d="M70 0l-25 440M180 0l-5 440M300 0l-10 440M410 0l-5 440"/>
+        </g>
+        <path d="m60 280 80-90 70 25 60-85 65 30 80-65"
+              stroke="#0c7772" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+
+      <div class="about-stamp">
+        <strong>i-GIS</strong>
+        <span>Turning spatial data into decisions that move communities forward.</span>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <span class="eyebrow">Who we are</span>
+      <h2>Clarity from the ground up.</h2>
+
+      <p>
+        i-GIS Geosystems LTD is a geomatics and spatial consulting firm
+        bridging the gap between physical geography and data-driven
+        decision-making. We combine technical expertise, modern surveying
+        instrumentation and spatial analysis to support infrastructure,
+        land management and environmental sustainability.
+      </p>
+
+      <p>
+        Headquartered at Malik Heights, Adams Arcade, Nairobi, our work
+        spans Kenya and the wider East Africa and Horn of Africa region.
+        We serve public utilities, private corporations, conservation
+        groups and international development partners.
+      </p>
+
+      <div class="value-list">
+        <div class="value">
+          <b>Precision</b>
+          <span>Accuracy in every survey and data point.</span>
+        </div>
+        <div class="value">
+          <b>Innovation</b>
+          <span>Modern GIS and remote sensing technology.</span>
+        </div>
+        <div class="value">
+          <b>Sustainability</b>
+          <span>Development that respects our environment.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Integrated expertise. Practical outcomes.</h2>
+      <p>
+        From field data capture to strategic planning, our services help
+        clients understand places, manage assets and make confident decisions.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <article class="service-card">
+        <div class="service-icon">⌖</div>
+        <h3>Engineering & Cadastral Surveys</h3>
+        <p>
+          High-precision topographic, boundary and engineering surveys,
+          mapping and layout designs that support infrastructure delivery
+          and secure land management.
+        </p>
+        <div class="service-more">Survey · Mapping · Land boundaries</div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">▦</div>
+        <h3>GIS & Remote Sensing</h3>
+        <p>
+          Spatial database development, satellite imagery interpretation,
+          multi-layer utility mapping and environmental change detection
+          to reveal geographic insights.
+        </p>
+        <div class="service-more">Spatial data · Imagery · Analysis</div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">⌂</div>
+        <h3>Urban & Regional Planning</h3>
+        <p>
+          Municipal masterplans, zoning designs, technical feasibility
+          studies and climate-resilient urban layouts that guide sustainable growth.
+        </p>
+        <div class="service-more">Masterplans · Zoning · Feasibility</div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">♧</div>
+        <h3>Environmental Impact Assessment</h3>
+        <p>
+          Environmental field assessments, spatial modelling and compliance
+          reporting that help safeguard ecosystems alongside infrastructure development.
+        </p>
+        <div class="service-more">EIA · Risk assessment · Conservation</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- WORK PROCESS -->
+<section class="section">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">How we work</span>
+      <h2>From field reality to informed action.</h2>
+      <p>
+        A connected approach that brings together people, reliable data
+        and technical insight at every stage of a project.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-item">
+        <h3>Understand the brief</h3>
+        <p>We listen to project objectives, site context, requirements and intended outcomes.</p>
+      </div>
+
+      <div class="process-item">
+        <h3>Capture the evidence</h3>
+        <p>We gather accurate field, survey, spatial and environmental information.</p>
+      </div>
+
+      <div class="process-item">
+        <h3>Analyse & design</h3>
+        <p>We process data into useful maps, models, assessments and technical recommendations.</p>
+      </div>
+
+      <div class="process-item">
+        <h3>Deliver with clarity</h3>
+        <p>We provide structured outputs that support implementation and sound decisions.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section projects-section" id="projects">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">Selected experience</span>
+      <h2>Real projects. Meaningful impact.</h2>
+      <p>
+        Our portfolio reflects work across infrastructure, water and sanitation,
+        climate resilience, land management and conservation.
+      </p>
+    </div>
+
+    <div class="project-toolbar">
+      <button class="filter-btn active" data-filter="all">All projects</button>
+      <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+      <button class="filter-btn" data-filter="water">Water & development</button>
+      <button class="filter-btn" data-filter="environment">Environment</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card" data-category="infrastructure">
+        <div class="project-art">⌂</div>
+        <div class="project-body">
+          <span class="project-tag">Infrastructure & utilities</span>
+          <h3>Kenya Power Distribution Network Asset Mapping</h3>
+          <p>Updated the corporate Geo-Database with spatial and attribute information for distribution lines, transformers and customer locations nationwide.</p>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="water">
+        <div class="project-art">💧</div>
+        <div class="project-body">
+          <span class="project-tag">Agriculture & land security</span>
+          <h3>Waga & Machame Irrigation Schemes</h3>
+          <p>Topographic surveys, cadastral mapping and GIS integration supporting irrigation design and agricultural land security in Vanga, Kwale County.</p>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="water">
+        <div class="project-art">🏗</div>
+        <div class="project-body">
+          <span class="project-tag">International development · WASH</span>
+          <h3>Cross-Border Urban WASH Masterplans</h3>
+          <p>Gender-sensitive, climate-resilient water, sanitation and hygiene masterplans and feasibility studies for Qartho, Dollow and South Galkayo, Somalia. Supported by UNICEF, African Water Facility and AfDB.</p>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="water">
+        <div class="project-art">⌖</div>
+        <div class="project-body">
+          <span class="project-tag">Socio-economic research</span>
+          <h3>Las Anod Water Supply Baseline Survey</h3>
+          <p>Socio-economic baseline surveys and spatial scoping supporting sustainable municipal water delivery in Somaliland, with the Somaliland Development Fund / Earth Water.</p>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="environment">
+        <div class="project-art">🌳</div>
+        <div class="project-body">
+          <span class="project-tag">Remote sensing & conservation</span>
+          <h3>Mau Forest Complex Change Detection</h3>
+          <p>Multi-temporal GIS and remote sensing analysis of land cover evolution and human encroachment across 416,542 hectares of the Mau Forest ecosystem.</p>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="environment">
+        <div class="project-art">⛰</div>
+        <div class="project-body">
+          <span class="project-tag">Environmental risk assessment</span>
+          <h3>Mandera Soil Erosion & Catchment Risk</h3>
+          <p>Satellite imagery, GIS modelling and RUSLE analysis to estimate land degradation and soil loss across the Mandera Town water catchment.</p>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="environment">
+        <div class="project-art">🌊</div>
+        <div class="project-body">
+          <span class="project-tag">Coastal & marine resources</span>
+          <h3>Somalia Seaweed Cultivation Site Scoping</h3>
+          <p>Spatial analytics to identify and map promising marine ecological locations for commercial seaweed cultivation along the Somali coastline.</p>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="environment">
+        <div class="project-art">🌿</div>
+        <div class="project-body">
+          <span class="project-tag">Digital conservation mapping</span>
+          <h3>Olerai Conservancy Mapping Initiative</h3>
+          <p>High-precision digital conservation layout mapping ecological boundaries, wildlife infrastructure and land assets.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<div class="partners">
+  <div class="container partners-inner">
+    <span class="partners-label">Selected programme partners named in our project experience</span>
+    <span class="partner-name">UNICEF</span>
+    <span class="partner-name">AfDB</span>
+    <span class="partner-name">African Water Facility</span>
+    <span class="partner-name">SDF</span>
+    <span class="partner-name">Earth Water</span>
+  </div>
+</div>
+
+<!-- WHY CHOOSE US -->
+<section class="section" id="why-us">
+  <div class="container why-grid">
+
+    <div>
+      <div class="section-head">
+        <span class="eyebrow">The i-GIS difference</span>
+        <h2>Technical depth. Regional understanding.</h2>
+        <p>
+          We bring together precision, cross-border experience and an
+          understanding of the standards that complex projects demand.
+        </p>
+      </div>
+
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div>
+            <h3>Uncompromising precision</h3>
+            <p>We recognise that engineering decisions and land information require dependable data, careful methods and quality assurance.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div>
+            <h3>Cross-border mobility</h3>
+            <p>Project experience across Kenya, Somalia and Somaliland helps us work across varied logistical, cultural and environmental contexts.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div>
+            <h3>Institutional capability</h3>
+            <p>We understand the reporting, technical feasibility and project requirements associated with public-sector and international development work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-panel">
+      <span class="eyebrow">Let's collaborate</span>
+      <h3>Your next project starts with a clearer picture.</h3>
+      <p>
+        Whether you are planning infrastructure, managing land and utility assets,
+        assessing environmental risk or developing a city masterplan, speak with
+        our team about the spatial information and technical services your project needs.
+      </p>
+      <a class="btn" href="#contact">Talk to our team ↗</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="container contact-grid">
+
+    <div class="contact-info">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Let's map out what's next.</h2>
+      <p>
+        Contact i-GIS Geosystems LTD for project inquiries, tenders,
+        technical consultations and service quotations.
+      </p>
+
+      <div class="contact-detail">
+        <div class="service-icon">⌖</div>
+        <div>
+          <b>Head office</b>
+          <span>Malik Heights, 2nd Floor, Room 204<br>Adams Arcade, Ngong Road<br>Nairobi, Kenya</span>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="service-icon">☎</div>
+        <div>
+          <b>Call our team</b>
+          <a href="tel:+254726355469">+254 726 355469</a><br>
+          <a href="tel:+254731067712">+254 731 067712</a>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="service-icon">✉</div>
+        <div>
+          <b>Email</b>
+          <a href="mailto:igis.geosystem@gmail.com">igis.geosystem@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="service-icon">◷</div>
+        <div>
+          <b>Business hours</b>
+          <span>Monday – Friday<br>8:00 AM – 5:00 PM (EAT)</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <h3>Tell us about your project</h3>
+      <p>Share a few details and prepare an inquiry email to our team.</p>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Your name *</label>
+          <input id="name" name="name" required placeholder="Full name">
+        </div>
+
+        <div class="field">
+          <label for="organization">Organisation</label>
+          <input id="organization" name="organization" placeholder="Company or institution">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="email">Email address *</label>
+          <input id="email" name="email" type="email" required placeholder="name@example.com">
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" placeholder="+254 ...">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="service">Service of interest</label>
+        <select id="service" name="service">
+          <option value="">Choose a service</option>
+          <option>Engineering & Cadastral Surveys</option>
+          <option>GIS & Remote Sensing</option>
+          <option>Urban & Regional Planning</option>
+          <option>Environmental Impact Assessment</option>
+          <option>Other / General inquiry</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="message">Project details *</label>
+        <textarea id="message" name="message" required
+          placeholder="Briefly describe your project, location and what support you need..."></textarea>
+      </div>
+
+      <button class="btn" type="submit">Prepare email inquiry ↗</button>
+
+      <div class="form-note" id="formNote" aria-live="polite">
+        Your email app will open with your inquiry addressed to
+        igis.geosystem@gmail.com. No information is stored on this website.
+      </div>
+    </form>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a class="brand" href="#home">
+          <div class="brand-mark">⌖</div>
+          <div class="brand-name">
+            i-GIS GEOSYSTEMS
+            <span>SPATIAL INTELLIGENCE</span>
+          </div>
+        </a>
+
+        <p>
+          Geomatics and spatial consulting solutions for infrastructure,
+          land management, urban development and environmental sustainability.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#about">About the company</a>
+        <a href="#services">Our services</a>
+        <a href="#projects">Project experience</a>
+        <a href="#why-us">Why choose i-GIS</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Malik Heights, 2nd Floor, Room 204, Adams Arcade, Nairobi, Kenya</p>
+        <a href="tel:+254726355469">+254 726 355469</a>
+        <a href="tel:+254731067712">+254 731 067712</a>
+        <a href="mailto:igis.geosystem@gmail.com">igis.geosystem@gmail.com</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 i-GIS Geosystems LTD. All rights reserved.</span>
+      <span>Engineering & Cadastral Surveys · GIS · Planning · EIA</span>
+    </div>
+
+  </div>
+</footer>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+
+// MOBILE NAVIGATION
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.textContent = isOpen ? '✕' : '☰';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = '☰';
+  });
+});
+
+// PROJECT FILTERS
+document.querySelectorAll('.filter-btn').forEach(button => {
+  button.addEventListener('click', () => {
+
+    document.querySelectorAll('.filter-btn').forEach(item => {
+      item.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    const filter = button.dataset.filter;
+
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.hidden = filter !== 'all' &&
+                    card.dataset.category !== filter;
+    });
+
+  });
+});
+
+// CONTACT FORM
+document.getElementById('contactForm').addEventListener('submit', event => {
+
+  event.preventDefault();
+
+  const data = new FormData(event.currentTarget);
+
+  const subject = encodeURIComponent(
+    'Project inquiry — i-GIS Geosystems LTD'
+  );
+
+  const body = encodeURIComponent(
+    `Name: ${data.get('name')}
+Organisation: ${data.get('organization') || 'Not provided'}
+Email: ${data.get('email')}
+Phone: ${data.get('phone') || 'Not provided'}
+Service: ${data.get('service') || 'Not specified'}
+
+Project details:
+${data.get('message')}`
+  );
+
+  document.getElementById('formNote').textContent =
+    'Opening your email application with the inquiry details. Please review and send the message.';
+
+  window.location.href =
+    `mailto:igis.geosystem@gmail.com?subject=${subject}&body=${body}`;
+
+});
+
+</script>
+
+</body>
+</html>
